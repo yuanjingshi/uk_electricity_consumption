@@ -12,8 +12,8 @@ def boxplot_electricity_consumption(
     title: str,
     xlabel: str,
     ylabel: str,
-    xticklabel: List | None,
-    hue: str | None,
+    xticklabel: List | None = None,
+    hue: str | None = None,
     colours: int = 2,
     is_legend: bool = False,
 ):
@@ -55,7 +55,12 @@ def boxplot_electricity_consumption(
 
 
 def plot_week_consumption(
-    df: pd.DataFrame, week_from: str, week_to: str, title: str, xlabel: str, ylabel: str
+    df: pd.DataFrame,
+    week_from: str,
+    week_to: str,
+    title: str,
+    xlabel: str,
+    ylabel: str,
 ):
     """
     Plots the electricity consumption data for a week.
