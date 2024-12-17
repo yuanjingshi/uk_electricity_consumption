@@ -6,7 +6,9 @@ import click
 import kaggle
 
 
-def kaggle_api_key(user_name: str | None = None, api_key: str | None = None) -> None:
+def kaggle_api_key(
+    user_name: str | None = None, api_key: str | None = None
+) -> None:
     """
     Function that takes the kaggle API key as input and saves it to
     ~/.kaggle/kaggle.json if it doesn't exist
@@ -56,7 +58,9 @@ def kaggle_download_data(dataset: str, save_path: str | None = None) -> None:
     required=True,
     help='Kaggle dataset identifier (e.g., "username/dataset-name")',
 )
-@click.option("--save-path", "-p", required=True, help="Data save path")  # type: ignore
+@click.option(  # type: ignore
+    "--save-path", "-p", required=True, help="Data save path"
+)
 @click.option(  # type: ignore
     "--user-name",
     "-u",

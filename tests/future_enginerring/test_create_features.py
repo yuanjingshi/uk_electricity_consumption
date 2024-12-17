@@ -15,9 +15,9 @@ def test_create_features():
 
     # Get the day of the week and week of the year for the sampled dates
     sampled_dates["day_of_week"] = sampled_dates.index.day_of_week
-    sampled_dates["week_of_year"] = sampled_dates.index.isocalendar().week.astype(
-        "int64"
-    )
+    sampled_dates[
+        "week_of_year"
+    ] = sampled_dates.index.isocalendar().week.astype("int64")
     sampled_dates["month"] = sampled_dates.index.month
     sampled_dates["quarter"] = sampled_dates.index.quarter
     sampled_dates["year"] = sampled_dates.index.year

@@ -1,5 +1,6 @@
 import logging
 from datetime import date
+from typing import List  # noqa
 
 import holidays
 
@@ -17,8 +18,8 @@ def retrieve_holiday_dates(
         subdiv=subdiv, years=range(from_year, to_year), observed=True
     ).items()
 
-    holiday_dates_observed = []
-    holiday_dates_observed_name = []
+    holiday_dates_observed = []  # type: List[str]
+    holiday_dates_observed_name = []  # type: List[str]
 
     for d, name in sorted(bank_holiday):
         # Pop the previous value as observed bank holidays takes place later
@@ -35,5 +36,7 @@ def retrieve_holiday_dates(
         else:
             break
 
-    holiday_dict = dict(zip(holiday_dates_observed, holiday_dates_observed_name))
+    holiday_dict = dict(
+        zip(holiday_dates_observed, holiday_dates_observed_name)
+    )
     return holiday_dict
