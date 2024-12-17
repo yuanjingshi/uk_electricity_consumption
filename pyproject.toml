@@ -6,7 +6,7 @@ name = "uk_electricity_consumption"
 dynamic = ["version"]
 description = "A Python package for predicting UK electricity consumption"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = { file = "LICENSE" }
 authors = [
     { name = "Yuanjing Shi", email = "ys691@cam.ac.uk" }
@@ -41,23 +41,23 @@ exclude = '''
   | dist
 )/
 '''
+line_length = 79
 
 [tool.isort]
 profile = "black"
 multi_line_output = 3
 include_trailing_comma = true
 ensure_newline_before_comments = true
-line_length = 88
+line_length = 79
 known_first_party = "core"
 skip_glob = '\.eggs/*,\.git/*,\.venv/*,build/*,dist/*'
 default_section = 'THIRDPARTY'
 
 [tool.mypy]
-python_version = '3.8'
+python_version = '3.12'
 ignore_missing_imports = true
 no_implicit_optional = true
 check_untyped_defs = true
-
 
 [tool.docformatter]
 pre-summary-newline = true

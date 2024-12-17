@@ -121,6 +121,7 @@ mlruns
 # direnv
 .envrc
 
-# sqlite + csv folder
+# sqlite + csv + parquet folder
 *.sqlite
-csv
+*.csv
+*.parquet
