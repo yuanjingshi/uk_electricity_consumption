@@ -52,6 +52,6 @@ Then run the following command in the terminal being at the root of the reposito
 and download the data.
 
 ```bash
-python core/data_load/data_loader.py -u "your_user_name" -k "your_api_key" -d "albertovidalrod/electricity-consumption-uk-20092022" -p "data/demand_data"
-python core/data_load/data_loader.py -u "your_user_name" -k "your_api_key" -d "jakewright/2m-daily-weather-history-uk" -p "data/weather_data"
+python data/load_data.py -u "your_user_name" -k "your_api_key" -d "albertovidalrod/electricity-consumption-uk-20092022" -p "data/demand_data"
+python data/load_data.py -u "your_user_name" -k "your_api_key" -d "jakewright/2m-daily-weather-history-uk" -p "data/weather_data"
 ```
