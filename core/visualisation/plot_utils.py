@@ -75,3 +75,27 @@ def plot_week_consumption(
     df.loc[(df.index > week_from) & (df.index < week_to)]["tsd"].plot(
         figsize=(15, 5), xlabel=xlabel, ylabel=ylabel, title=title
     )
+
+
+def plot_test_set_predictions(
+    df_test: pd.DataFrame, preds_column: str, title: str
+):
+    """
+    Plots the predictions on the test set.
+
+    Parameters:
+    df_test (pd.DataFrame): The DataFrame containing the test set data and predictions.
+
+    Returns:
+    None
+    """
+    fig, ax = plt.subplots(figsize=(15, 5))
+    ax.plot(df_test.index, df_test["tsd"], "o", label="Test set")
+    ax.plot(df_test.index, df_test[preds_column], "o", label="Prediction")
+
+    ax.legend(loc="center", bbox_to_anchor=(1.075, 0.5))
+
+    ax.set_title(title)
+    ax.set_ylabel("Energy Demand (MW)")
+    ax.set_xlabel("Date")
+    plt.show()
